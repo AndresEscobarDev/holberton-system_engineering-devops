@@ -2,4 +2,3 @@
 git add --all
 git commit -m "0x01. Shell, permissions tasks"
 git push origin master
-woltfang
