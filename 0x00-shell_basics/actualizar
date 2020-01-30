@@ -1,4 +1,0 @@
-#!/bin/bash
-git add --all
-git commit -m "0x00. Shell, basics Tasks"
-git push origin master
