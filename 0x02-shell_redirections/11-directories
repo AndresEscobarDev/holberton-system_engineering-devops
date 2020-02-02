@@ -1,2 +1,2 @@
 #!/bin/bahs
-ls -lRa
+ls -laR |wc -l
