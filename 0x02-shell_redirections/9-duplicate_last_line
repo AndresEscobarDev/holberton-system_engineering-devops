@@ -1,2 +1,2 @@
 #!/bin/bash
-tail -n 2 iacta >>iacta
+echo -e \n >> iacta |tail -n 1 "iacta" >> "iacta"
