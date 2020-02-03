@@ -1,2 +1,2 @@
 #!/bin/bash
-echo -ne "\n$(tail -n 1 iacta)" >>iacta
+tail -n 1 iacta |head -n 1 >>iacta
