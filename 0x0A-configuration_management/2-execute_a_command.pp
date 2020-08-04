@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-#Kills a process named killmenow.
+# Kills a process named killmenow.
 exec {'killmenow':
     path     => '/usr/bin',
     command  => 'pkill killmenow',
