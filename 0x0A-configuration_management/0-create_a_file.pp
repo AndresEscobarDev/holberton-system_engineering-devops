@@ -1,4 +1,5 @@
-# Create a file in /tmp named holberton
+#!/usr/bin/env bash
+#Create a file in /tmp named holberton
 file {'/tmp/holberton':
     ensure  => 'file',
     mode    => '0744',
