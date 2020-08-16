@@ -4,4 +4,6 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 sudo sed -i 's/8080/80/g' /etc/nginx/sities-enabled/default
+pkill -o nginx
 sudo nginx start
+
