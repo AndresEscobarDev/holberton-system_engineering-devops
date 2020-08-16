@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Script to make nginx listen on port 80
 sudo sed -i 's/8080/80/g' /etc/nginx/sities-enabled/default
-sudo nginx start
+sudo service nginx start
 pkill -o nginx
