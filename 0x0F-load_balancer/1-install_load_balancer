@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Install and configure HAproxy on 1520-lb-01 server
+sudo apt-get -y update
+sudo apt-get install -y haproxy
+sudo sed -i "/errorfile 504/a \\\nlisten http\n\tbind *:80\n\tmode http\n\tdefault_backend web_servers" /etc/haproxy/haproxy.cfg
+sudo sed -i "/default_backend web_servers/a \nbackend web_servers\n\tbalance roundrobin\n\tmode http\n\tserver 1520-web-01 34.73.169.165:80\n\tserver 1520-web-01 34.75.135.102:80" /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
