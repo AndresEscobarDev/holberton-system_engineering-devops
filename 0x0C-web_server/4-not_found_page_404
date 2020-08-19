@@ -3,8 +3,8 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
-sudo echo 'Holberton School' > /var/www/html/index.nginx-debian.html
-sudo echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+echo 'Holberton School' > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
 sudo sed -i '/server_name _;/ a rewrite ^/redirect_me https://www.youtube.com/watch?v=ly_Ub9Lytk0 permanent;' /etc/nginx/sites-available/default
 sudo sed -i '/server_name _;/ a error_page 404 /custom_404.html;' /etc/nginx/sites-available/default
 sudo service nginx start
