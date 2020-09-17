@@ -5,9 +5,9 @@ information about their TODO list progress
 in CSV format
 """
 
+import csv
 import requests
 from sys import argv
-import csv
 
 
 if __name__ == "__main__":
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     tasks = [v for v in todos if v.get('userId') == int(argv[1])]
     filename = argv[1] + '.csv'
     with open(filename, mode='w') as f:
-        writer = csv.writer(f, delimiter=',', lineterminator='\n',
-                            quotechar='"', quoting=csv.QUOTE_ALL)
+        writ = csv.writer(f, delimiter=',', lineterminator='\n',
+                          quotechar='"', quoting=csv.QUOTE_ALL)
         for t in tasks:
-            writer.writerow([argv[1], user, t.get('completed'), t.get('title')])
+            writ.writerow([argv[1], user, t.get('completed'), t.get('title')])
