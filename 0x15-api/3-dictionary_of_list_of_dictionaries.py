@@ -17,7 +17,8 @@ if __name__ == "__main__":
     for i in users:
         user = i['username']
         tasks = [v for v in todos if v['userId'] == int(i['id'])]
-        newTasks = [{'task': v['title'], 'completed': v['completed'], 'username': user} for v in tasks]
+        newTasks = [{'task': v['title'], 'completed': v['completed'],
+                     'username': user} for v in tasks]
         with open('todo_all_employees.json', mode='w') as f:
             userDict[i['id']] = newTasks
             json.dump(userDict, f)

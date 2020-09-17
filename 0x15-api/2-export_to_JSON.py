@@ -19,5 +19,5 @@ if __name__ == "__main__":
                  'username': user} for v in tasks]
     filename = argv[1] + '.json'
     with open(filename, mode='w') as f:
-        userDict = {argv[1]:newTasks}
+        userDict = {argv[1]: newTasks}
         json.dump(userDict, f)

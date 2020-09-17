@@ -12,7 +12,7 @@ import csv
 
 if __name__ == "__main__":
     user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
-                        .format(argv[1])).json()['name']
+                        .format(argv[1])).json()['username']
     todos = requests.get("https://jsonplaceholder.typicode.com/todos").json()
     tasks = [v for v in todos if v['userId'] == int(argv[1])]
     filename = argv[1] + '.csv'
