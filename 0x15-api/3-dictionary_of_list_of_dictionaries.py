@@ -15,10 +15,10 @@ if __name__ == "__main__":
     userDict = {}
     todos = requests.get("https://jsonplaceholder.typicode.com/todos").json()
     for i in users:
-        user = i['username']
-        tasks = [v for v in todos if v['userId'] == int(i['id'])]
-        newTasks = [{'task': v['title'], 'completed': v['completed'],
+        user = i.get('username')
+        tasks = [v for v in todos if v.get('userId') == int(i.get('id'))]
+        newTasks = [{'task': v.get('title'), 'completed': v.get('completed'),
                      'username': user} for v in tasks]
         with open('todo_all_employees.json', mode='w') as f:
-            userDict[i['id']] = newTasks
+            userDict[i.get('id')] = newTasks
             json.dump(userDict, f)

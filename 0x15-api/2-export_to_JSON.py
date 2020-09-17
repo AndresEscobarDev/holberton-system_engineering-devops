@@ -12,10 +12,10 @@ import json
 
 if __name__ == "__main__":
     user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
-                        .format(argv[1])).json()['username']
+                        .format(argv[1])).json().get('username')
     todos = requests.get("https://jsonplaceholder.typicode.com/todos").json()
-    tasks = [v for v in todos if v['userId'] == int(argv[1])]
-    newTasks = [{'task': v['title'], 'completed': v['completed'],
+    tasks = [v for v in todos if v.get('userId') == int(argv[1])]
+    newTasks = [{'task': v.get('title'), 'completed': v.get('completed'),
                  'username': user} for v in tasks]
     filename = argv[1] + '.json'
     with open(filename, mode='w') as f:
